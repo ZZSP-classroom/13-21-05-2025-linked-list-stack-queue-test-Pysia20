@@ -7,7 +7,7 @@ class tests(unittest.TestCase):
         x.add_task(1,"medium")
         x.add_task(2,"high")
         x.add_task(0,"low")
-        self.assertEqual(x.printLL(),["low","medium","high"])
+        self.assertEqual(x.printLL(),["high","medium","low"])
 
     def test_add2(self):
         x = PriorityQueue()
@@ -16,7 +16,7 @@ class tests(unittest.TestCase):
         x.add_task(0,"low")
         x.add_task(2,"high")
         x.add_task(0,"low")
-        self.assertEqual(x.printLL(),["low","low","medium","high","high"])
+        self.assertEqual(x.printLL(),["high","high","medium","low","low"])
     
     def test_process_task(self):
         x = PriorityQueue()
