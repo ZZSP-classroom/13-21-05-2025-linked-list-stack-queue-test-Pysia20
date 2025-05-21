@@ -4,10 +4,19 @@ from task_scheduler_5 import *
 class tests(unittest.TestCase):
     def test_add(self):
         x = PriorityQueue()
-        x.add_task(1,"idk")
-        x.add_task(2,"idk3")
-        x.add_task(0,"idk2")
-        self.assertEqual(x.printLL(),["idk3","idk","idk2"])
+        x.add_task(1,"medium")
+        x.add_task(2,"high")
+        x.add_task(0,"low")
+        self.assertEqual(x.printLL(),["low","medium","high"])
+
+    def test_add2(self):
+        x = PriorityQueue()
+        x.add_task(1,"medium")
+        x.add_task(2,"high")
+        x.add_task(0,"low")
+        x.add_task(2,"high")
+        x.add_task(0,"low")
+        self.assertEqual(x.printLL(),["low","low","medium","high","high"])
     
     def test_process_task(self):
         x = PriorityQueue()
